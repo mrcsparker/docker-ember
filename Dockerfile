@@ -1,7 +1,8 @@
 FROM mhart/alpine-node:5.7.0
 MAINTAINER Chris Parker <mrcsparker@gmail.com>
 
-RUN apk add --update nginx bash git
+RUN apk add --update nginx bash git && \
+    rm -rf /var/cache/apk/*
 
 # nginx setup
 RUN mkdir -p /tmp/nginx/client-body
